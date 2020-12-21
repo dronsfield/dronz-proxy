@@ -28,7 +28,7 @@ server.get("*", function (req, res) {
   }
 })
 
-app.use(function (err, req, res, next) {
+server.use(function (err, req, res, next) {
   res.status(500).send("nah")
 })
 
