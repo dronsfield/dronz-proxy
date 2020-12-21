@@ -7,6 +7,7 @@ const server = require("express")()
 const proxy = require("http-proxy").createProxyServer()
 const url = require("url")
 
+server.use(require("cors")())
 server.use(require("compression")())
 
 server.get("*", function (req, res) {
