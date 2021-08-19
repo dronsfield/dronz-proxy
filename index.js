@@ -16,6 +16,8 @@ server.get("*", function (req, res) {
     return res.send("Hello there")
   } else {
     const proxyUrl = url.parse(path.slice(1))
+    console.log(path)
+    console.log(JSON.stringify(proxyUrl, null, 2))
     if (ALLOWED_HOSTS.includes(proxyUrl.host)) {
       return proxy.web(req, res, {
         target: "https://" + proxyUrl.host + proxyUrl.path,
