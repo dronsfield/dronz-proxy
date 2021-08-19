@@ -11,20 +11,23 @@ server.use(require("cors")())
 server.use(require("compression")())
 
 server.get("*", function (req, res) {
-  const path = req.path
+  const path = req.originalUrl
   if (path === "/") {
     return res.send("Hello there")
   } else {
-    const proxyUrl = url.parse(path.slice(1))
-    console.log(path)
-    console.log(JSON.stringify(proxyUrl, null, 2))
+    const formattedPath = path.slice(1)
+    const proxyUrl = url.parse(formattedPath)
+    console.log(`REQUESTED URL: ${formattedPath}`)
     if (ALLOWED_HOSTS.includes(proxyUrl.host)) {
+      const target = "https://" + proxyUrl.host + proxyUrl.path
+      console.log(`HOST PERMITTED, PROXY TARGET: ${target}`)
       return proxy.web(req, res, {
-        target: "https://" + proxyUrl.host + proxyUrl.path,
+        target,
         changeOrigin: true,
         ignorePath: true
       })
     } else {
+      console.log(`HOST DENIED`)
       res.statusCode = 403
       return res.send(`host ${proxyUrl.host} not allowed`)
     }
