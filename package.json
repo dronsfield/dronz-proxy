@@ -21,7 +21,9 @@
     "koa-proxy": "^1.0.0-alpha.3",
     "koa-route": "^3.2.0",
     "node-fetch": "^2.6.1",
-    "proxy-from-env": "^1.1.0"
+    "node-http-proxy-json": "^0.1.9",
+    "proxy-from-env": "^1.1.0",
+    "request-hash": "^1.0.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
