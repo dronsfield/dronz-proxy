@@ -11,19 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
-    "cors-anywhere": "^0.4.3",
-    "express": "^4.17.1",
-    "http-proxy": "^1.18.1",
-    "isomorphic-unfetch": "^3.1.0",
-    "koa": "^2.13.0",
-    "koa-proxy": "^1.0.0-alpha.3",
-    "koa-route": "^3.2.0",
-    "node-fetch": "^2.6.1",
-    "proxy-from-env": "^1.1.0"
+    "compression": "1.7.4",
+    "cors": "2.8.5",
+    "cors-anywhere": "0.4.3",
+    "express": "4.17.1",
+    "http-proxy": "1.18.1",
+    "isomorphic-unfetch": "3.1.0",
+    "koa": "2.13.0",
+    "koa-proxy": "1.0.0-alpha.3",
+    "koa-route": "3.2.0",
+    "node-fetch": "2.6.1",
+    "proxy-from-env": "1.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "2.0.6"
   }
 }
