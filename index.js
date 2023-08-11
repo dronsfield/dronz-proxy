@@ -15,7 +15,7 @@ server.get("*", function (req, res) {
   if (path === "/") {
     return res.send("Hello there")
   } else {
-    const formattedPath = path.slice(1)
+    const formattedPath = `https://${path.slice(1)}`
     const proxyUrl = url.parse(formattedPath)
     console.log({ proxyUrl })
     console.log(`REQUESTED URL: ${formattedPath}`)
