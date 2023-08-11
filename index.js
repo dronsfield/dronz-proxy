@@ -17,6 +17,7 @@ server.get("*", function (req, res) {
   } else {
     const formattedPath = path.slice(1)
     const proxyUrl = url.parse(formattedPath)
+    console.log({ proxyUrl })
     console.log(`REQUESTED URL: ${formattedPath}`)
     if (ALLOWED_HOSTS.includes(proxyUrl.host)) {
       const target = "https://" + proxyUrl.host + proxyUrl.path
